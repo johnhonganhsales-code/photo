@@ -349,7 +349,13 @@ function updateLb() {
 
   const wrap = document.getElementById('lb-media');
   if (isVideo) {
-    wrap.innerHTML = `<div style="color:white;text-align:center;padding:2rem;"><div style="font-size:48px;margin-bottom:1rem;">🎬</div><div style="margin-bottom:1rem;font-size:15px;">${item.name}</div><a href="${item.webViewLink}" target="_blank" rel="noopener" style="color:#8ab4f8;font-size:14px;">Mở video trong Google Drive ↗</a></div>`;
+    wrap.innerHTML = `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+      <iframe src="https://drive.google.com/file/d/${item.id}/preview"
+        style="width:min(860px,100%);height:min(500px,70vh);border:none;border-radius:6px;"
+        allow="autoplay" allowfullscreen></iframe>
+      <a href="${item.webViewLink}" target="_blank" rel="noopener"
+        style="color:#8ab4f8;font-size:13px;text-decoration:none;">Mở trong Google Drive ↗</a>
+    </div>`;
   } else {
     const src = item.thumbnailLink ? item.thumbnailLink.replace(/=s\d+/, '=s1600') : '';
     wrap.innerHTML = src ? `<img src="${src}" alt="${item.name||''}">` : `<div style="color:white;text-align:center;"><div style="font-size:64px;">🖼️</div><div style="margin-top:1rem;">${item.name}</div></div>`;
