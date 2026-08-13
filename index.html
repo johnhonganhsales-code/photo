@@ -24,212 +24,100 @@
     }
   }
   html, body { min-height: 100%; background: var(--bg); color: var(--text-primary); font-family: var(--font); }
-
-  /* LOGIN */
-  #login-screen {
-    min-height: 100vh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem;
-  }
-  .login-icon {
-    width: 72px; height: 72px; border-radius: 50%; background: var(--accent-bg);
-    display: flex; align-items: center; justify-content: center; font-size: 32px;
-  }
+  #login-screen { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; padding: 2rem; }
+  .login-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--accent-bg); display: flex; align-items: center; justify-content: center; font-size: 32px; }
   .login-title { font-family: var(--font-voice); font-size: 26px; font-weight: normal; color: var(--text-primary); text-align: center; }
   .login-sub { font-size: 14px; color: var(--text-muted); text-align: center; max-width: 280px; line-height: 1.6; }
-  .login-btn {
-    display: flex; align-items: center; gap: 10px;
-    padding: 10px 20px; border-radius: 24px;
-    border: 0.5px solid var(--border-strong); background: var(--surface);
-    cursor: pointer; font-size: 14px; font-family: var(--font);
-    color: var(--text-primary); transition: background 0.15s;
-  }
+  .login-btn { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 24px; border: 0.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 14px; font-family: var(--font); color: var(--text-primary); transition: background 0.15s; }
   .login-btn:hover { background: var(--surface-1); }
   .login-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
-  #login-error {
-    font-size: 13px; color: #c5221f; background: #fce8e6;
-    padding: 8px 14px; border-radius: var(--radius); display: none;
-  }
+  #login-error { font-size: 13px; color: #c5221f; background: #fce8e6; padding: 8px 14px; border-radius: var(--radius); display: none; }
   .login-note { font-size: 11px; color: var(--text-muted); text-align: center; max-width: 260px; line-height: 1.6; }
-
-  /* APP */
   #app { display: none; max-width: 920px; margin: 0 auto; padding-bottom: 3rem; }
-
-  .header {
-    padding: 1.5rem 1.5rem 1rem; display: flex;
-    align-items: flex-end; justify-content: space-between;
-    border-bottom: 0.5px solid var(--border);
-  }
+  .header { padding: 1.5rem 1.5rem 1rem; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 0.5px solid var(--border); }
   .album-title { font-family: var(--font-voice); font-size: 24px; font-weight: normal; letter-spacing: -0.3px; }
   .album-sub { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
   .header-right { display: flex; align-items: center; gap: 10px; }
   .avatar { width: 32px; height: 32px; border-radius: 50%; border: 0.5px solid var(--border); display: none; }
-  .signout-btn {
-    font-size: 12px; color: var(--text-muted); background: none;
-    border: 0.5px solid var(--border); border-radius: 20px;
-    padding: 4px 10px; cursor: pointer; font-family: var(--font); transition: color 0.15s;
-  }
-  .signout-btn:hover { color: var(--text-primary); border-color: var(--border-strong); }
-
-  /* ALBUM GRID */
-  #album-view { padding: 1.25rem 1.5rem; }
+  .signout-btn { font-size: 12px; color: var(--text-muted); background: none; border: 0.5px solid var(--border); border-radius: 20px; padding: 4px 10px; cursor: pointer; font-family: var(--font); }
+  .signout-btn:hover { color: var(--text-primary); }
+  #folder-view { padding: 1.25rem 1.5rem; }
   .section-label { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; }
-  .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-  .album-card {
-    border-radius: var(--radius); overflow: hidden; cursor: pointer;
-    border: 0.5px solid var(--border); background: var(--surface);
-    transition: transform 0.2s;
-  }
-  .album-card:hover { transform: translateY(-2px); }
-  .album-thumb { aspect-ratio: 1; background: var(--surface-1); overflow: hidden; }
-  .album-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .album-info { padding: 8px 10px 10px; }
-  .album-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .album-count { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-
-  /* MEDIA GRID */
+  .folder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .folder-card { border-radius: var(--radius); overflow: hidden; cursor: pointer; border: 0.5px solid var(--border); background: var(--surface); transition: transform 0.2s; }
+  .folder-card:hover { transform: translateY(-2px); }
+  .folder-thumb { aspect-ratio: 1; background: var(--surface-1); overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .folder-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .folder-info { padding: 8px 10px 10px; }
+  .folder-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .folder-count { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
   #media-view { display: none; }
-  .media-header {
-    display: flex; align-items: center; gap: 10px;
-    padding: 1rem 1.5rem; border-bottom: 0.5px solid var(--border);
-  }
-  .back-btn {
-    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    background: none; border: 0.5px solid var(--border); cursor: pointer; color: var(--text-secondary);
-    font-size: 18px; transition: background 0.15s; font-family: var(--font);
-  }
+  .media-header { display: flex; align-items: center; gap: 10px; padding: 1rem 1.5rem; border-bottom: 0.5px solid var(--border); }
+  .back-btn { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: none; border: 0.5px solid var(--border); cursor: pointer; color: var(--text-secondary); font-size: 18px; transition: background 0.15s; font-family: var(--font); }
   .back-btn:hover { background: var(--surface-1); }
-  .media-album-title { font-size: 16px; font-weight: 500; }
-  .media-album-count { font-size: 13px; color: var(--text-muted); margin-left: auto; }
+  .media-folder-title { font-size: 16px; font-weight: 500; }
+  .media-folder-count { font-size: 13px; color: var(--text-muted); margin-left: auto; }
   .media-grid-wrap { padding: 1rem 1.5rem; }
   .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 4px; }
-  .media-item {
-    aspect-ratio: 1; border-radius: 5px; overflow: hidden; cursor: pointer;
-    position: relative; background: var(--surface-1);
-  }
+  .media-item { aspect-ratio: 1; border-radius: 5px; overflow: hidden; cursor: pointer; position: relative; background: var(--surface-1); }
   .media-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
   .media-item:hover img { transform: scale(1.05); }
-  .video-badge {
-    position: absolute; bottom: 6px; right: 6px;
-    background: rgba(0,0,0,0.6); color: white;
-    font-size: 10px; padding: 2px 6px; border-radius: 3px;
-    display: flex; align-items: center; gap: 3px;
-  }
-
-  /* LOADING / EMPTY */
+  .video-badge { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.6); color: white; font-size: 10px; padding: 2px 6px; border-radius: 3px; }
   .loading-wrap { padding: 3rem; text-align: center; color: var(--text-muted); font-size: 14px; }
-  .spinner {
-    width: 28px; height: 28px; border: 2px solid var(--border);
-    border-top-color: var(--accent); border-radius: 50%;
-    animation: spin 0.7s linear infinite; margin: 0 auto 12px;
-  }
+  .spinner { width: 28px; height: 28px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 12px; }
   @keyframes spin { to { transform: rotate(360deg); } }
   .empty-state { padding: 3rem; text-align: center; color: var(--text-muted); font-size: 14px; }
-
-  /* STATS */
-  .stats-bar {
-    display: flex; gap: 20px; padding: 0.75rem 1.5rem;
-    border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-muted);
-  }
+  .stats-bar { display: flex; gap: 20px; padding: 0.75rem 1.5rem; border-top: 0.5px solid var(--border); font-size: 12px; color: var(--text-muted); }
   .stats-bar b { color: var(--text-secondary); font-weight: 500; }
-
-  /* LIGHTBOX */
-  #lightbox {
-    display: none; position: fixed; inset: 0; z-index: 999;
-    background: #0a0a09; flex-direction: column;
-  }
+  #lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: #0a0a09; flex-direction: column; }
   #lightbox.open { display: flex; }
-  .lb-top {
-    flex-shrink: 0; display: flex; align-items: center;
-    justify-content: space-between; padding: 12px 18px;
-    border-bottom: 0.5px solid rgba(255,255,255,0.08);
-  }
-  .lb-album-label { font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; }
+  .lb-top { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+  .lb-folder-label { font-size: 13px; color: rgba(255,255,255,0.4); font-style: italic; }
   .lb-controls { display: flex; align-items: center; gap: 10px; }
   .lb-counter { font-size: 13px; color: rgba(255,255,255,0.4); }
-  .lb-icon-btn {
-    width: 34px; height: 34px; border-radius: 50%;
-    background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.8); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; transition: background 0.15s; font-family: var(--font);
-    text-decoration: none; line-height: 1;
-  }
+  .lb-icon-btn { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.15s; font-family: var(--font); text-decoration: none; line-height: 1; }
   .lb-icon-btn:hover { background: rgba(255,255,255,0.18); }
-  .lb-stage {
-    flex: 1; position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .lb-media-wrap {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    padding: 16px 60px;
-  }
+  .lb-stage { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .lb-media-wrap { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 16px 60px; }
   .lb-media-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 3px; }
-  .lb-media-wrap video { max-width: 100%; max-height: 100%; border-radius: 3px; outline: none; }
-  .lb-nav {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 44px; height: 44px; border-radius: 50%;
-    background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.85); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; transition: background 0.15s; font-family: var(--font);
-  }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: background 0.15s; font-family: var(--font); }
   .lb-nav:hover { background: rgba(255,255,255,0.2); }
   .lb-nav:disabled { opacity: 0.2; cursor: default; }
   .lb-nav.prev { left: 10px; }
   .lb-nav.next { right: 10px; }
-  .lb-bottom {
-    flex-shrink: 0; padding: 12px 18px 16px;
-    border-top: 0.5px solid rgba(255,255,255,0.08);
-  }
+  .lb-bottom { flex-shrink: 0; padding: 12px 18px 16px; border-top: 0.5px solid rgba(255,255,255,0.08); }
   .lb-photo-title { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 2px; }
   .lb-photo-date { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
   .lb-thumbs { display: flex; gap: 5px; overflow-x: auto; scrollbar-width: none; }
   .lb-thumbs::-webkit-scrollbar { display: none; }
-  .lb-thumb {
-    width: 44px; height: 44px; border-radius: 4px; overflow: hidden;
-    cursor: pointer; flex-shrink: 0; border: 2px solid transparent; opacity: 0.45;
-    transition: opacity 0.15s, border-color 0.15s; position: relative;
-  }
+  .lb-thumb { width: 44px; height: 44px; border-radius: 4px; overflow: hidden; cursor: pointer; flex-shrink: 0; border: 2px solid transparent; opacity: 0.45; transition: opacity 0.15s, border-color 0.15s; }
   .lb-thumb.active { border-color: rgba(255,255,255,0.75); opacity: 1; }
-  .lb-thumb:hover { opacity: 0.8; }
   .lb-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .lb-thumb.vid::after {
-    content: '▶'; position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; color: white; background: rgba(0,0,0,0.35);
-  }
-  @media (max-width: 600px) {
-    .lb-nav { display: none; }
-    .lb-media-wrap { padding: 10px; }
-    .album-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+  @media (max-width: 600px) { .lb-nav { display: none; } .lb-media-wrap { padding: 10px; } .folder-grid { grid-template-columns: repeat(2, 1fr); } }
 </style>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-icon">📷</div>
   <div style="text-align:center">
     <div class="login-title">Kỷ niệm gia đình</div>
-    <div class="login-sub" style="margin-top:8px">Đăng nhập bằng Google để xem ảnh và video của bạn</div>
+    <div class="login-sub" style="margin-top:8px">Đăng nhập bằng Google để xem ảnh và video từ Google Drive</div>
   </div>
   <button class="login-btn" onclick="startOAuth()">
     <svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
     Đăng nhập với Google
   </button>
   <div id="login-error">Đăng nhập thất bại hoặc bị huỷ. Hãy thử lại.</div>
-  <div class="login-note">Chỉ tài khoản được uỷ quyền mới đăng nhập được. Ảnh và video không rời khỏi Google Photos của bạn.</div>
+  <div class="login-note">Ảnh và video không rời khỏi Google Drive của bạn.</div>
 </div>
 
-<!-- APP -->
 <div id="app">
   <div class="header">
     <div>
       <div class="album-title">Kỷ niệm gia đình</div>
-      <div class="album-sub" id="header-sub">Google Photos</div>
+      <div class="album-sub" id="header-sub">Google Drive</div>
     </div>
     <div class="header-right">
       <img class="avatar" id="user-avatar" src="" alt="avatar">
@@ -237,27 +125,25 @@
     </div>
   </div>
 
-  <!-- Albums -->
-  <div id="album-view">
-    <div class="loading-wrap" id="albums-loading"><div class="spinner"></div>Đang tải albums...</div>
-    <div id="albums-content" style="display:none">
-      <div style="padding:1.25rem 1.5rem 0"><div class="section-label">Albums của bạn</div></div>
-      <div style="padding:0.5rem 1.5rem 1.25rem"><div class="album-grid" id="album-grid"></div></div>
-      <div class="stats-bar"><div><b id="stat-albums">0</b> albums</div><div>Google Photos</div></div>
+  <div id="folder-view">
+    <div class="loading-wrap" id="folders-loading"><div class="spinner"></div>Đang tải thư mục...</div>
+    <div id="folders-content" style="display:none">
+      <div style="padding:1.25rem 1.5rem 0"><div class="section-label">Thư mục ảnh của bạn</div></div>
+      <div style="padding:0.5rem 1.5rem 1.25rem"><div class="folder-grid" id="folder-grid"></div></div>
+      <div class="stats-bar"><div><b id="stat-folders">0</b> thư mục</div><div>Google Drive</div></div>
     </div>
   </div>
 
-  <!-- Media -->
   <div id="media-view">
     <div class="media-header">
-      <button class="back-btn" onclick="backToAlbums()">&#8592;</button>
-      <div class="media-album-title" id="media-title"></div>
-      <div class="media-album-count" id="media-count"></div>
+      <button class="back-btn" onclick="backToFolders()">&#8592;</button>
+      <div class="media-folder-title" id="media-title"></div>
+      <div class="media-folder-count" id="media-count"></div>
     </div>
     <div class="media-grid-wrap">
       <div class="loading-wrap" id="media-loading"><div class="spinner"></div>Đang tải ảnh và video...</div>
       <div class="media-grid" id="media-grid" style="display:none"></div>
-      <div class="empty-state" id="media-empty" style="display:none">Album này chưa có ảnh hoặc video nào.</div>
+      <div class="empty-state" id="media-empty" style="display:none">Thư mục này chưa có ảnh hoặc video nào.</div>
     </div>
     <div class="stats-bar" id="media-stats" style="display:none">
       <div><b id="stat-photos">0</b> ảnh</div>
@@ -266,14 +152,13 @@
   </div>
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-modal="true">
   <div class="lb-top">
-    <div class="lb-album-label" id="lb-album-name"></div>
+    <div class="lb-folder-label" id="lb-folder-name"></div>
     <div class="lb-controls">
       <div class="lb-counter" id="lb-counter"></div>
-      <a id="lb-open-link" class="lb-icon-btn" title="Mở trong Google Photos" target="_blank" rel="noopener">&#8599;</a>
-      <button class="lb-icon-btn" onclick="closeLb()" aria-label="Đóng">&#x2715;</button>
+      <a id="lb-open-link" class="lb-icon-btn" title="Mở trong Google Drive" target="_blank" rel="noopener">&#8599;</a>
+      <button class="lb-icon-btn" onclick="closeLb()">&#x2715;</button>
     </div>
   </div>
   <div class="lb-stage" id="lb-stage">
@@ -289,30 +174,18 @@
 </div>
 
 <script>
-/* ═══════════════════════════════════════════
-   PASTE CLIENT ID CỦA MÀY VÀO ĐÂY
-   ═══════════════════════════════════════════ */
 const CLIENT_ID = '532637183208-pivksa14rh1tvmpsjod4bfkqgqeogh66.apps.googleusercontent.com';
+const SCOPE = 'https://www.googleapis.com/auth/drive.readonly';
 
-const SCOPE = 'https://www.googleapis.com/auth/photoslibrary.readonly';
-let accessToken = null;
-let currentMedia = [];
-let currentIdx = 0;
-let currentAlbumName = '';
-
-/* ── Google Identity Services token flow ── */
+let accessToken = null, currentMedia = [], currentIdx = 0, currentFolderName = '';
 let tokenClient = null;
 
 function initGIS() {
   tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: CLIENT_ID,
-    scope: SCOPE,
-    callback: (response) => {
-      if (response.error) {
-        showError('Đăng nhập thất bại: ' + response.error);
-        return;
-      }
-      accessToken = response.access_token;
+    client_id: CLIENT_ID, scope: SCOPE,
+    callback: (r) => {
+      if (r.error) { showError('Lỗi: ' + r.error); return; }
+      accessToken = r.access_token;
       if (accessToken) onLoggedIn(); else showError();
     },
   });
@@ -325,7 +198,7 @@ function startOAuth() {
 
 function showError(msg) {
   const el = document.getElementById('login-error');
-  el.textContent = msg || 'Đăng nhập thất bại hoặc bị huỷ. Hãy thử lại.';
+  el.textContent = msg || 'Đăng nhập thất bại. Hãy thử lại.';
   el.style.display = 'block';
 }
 
@@ -333,20 +206,14 @@ function onLoggedIn() {
   document.getElementById('login-error').style.display = 'none';
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
-  loadUserInfo();
-  loadAlbums();
+  loadUserInfo(); loadFolders();
 }
 
 async function loadUserInfo() {
   try {
-    const r = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-      headers: { Authorization: 'Bearer ' + accessToken }
-    });
+    const r = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', { headers: { Authorization: 'Bearer ' + accessToken } });
     const u = await r.json();
-    if (u.picture) {
-      const av = document.getElementById('user-avatar');
-      av.src = u.picture; av.style.display = 'block';
-    }
+    if (u.picture) { const av = document.getElementById('user-avatar'); av.src = u.picture; av.style.display = 'block'; }
     if (u.name) document.getElementById('header-sub').textContent = u.name;
   } catch(e) {}
 }
@@ -354,56 +221,53 @@ async function loadUserInfo() {
 function signOut() {
   accessToken = null;
   document.getElementById('app').style.display = 'none';
-  document.getElementById('album-view').style.display = 'block';
+  document.getElementById('folder-view').style.display = 'block';
   document.getElementById('media-view').style.display = 'none';
   document.getElementById('login-screen').style.display = 'flex';
 }
 
-/* ── Albums ── */
-async function loadAlbums() {
-  try {
-    let albums = [], pageToken = '';
-    do {
-      const url = 'https://photoslibrary.googleapis.com/v1/albums?pageSize=50' + (pageToken ? '&pageToken=' + pageToken : '');
-      const r = await fetch(url, { headers: { Authorization: 'Bearer ' + accessToken } });
-      const d = await r.json();
-      if (d.error) throw new Error(d.error.message);
-      if (d.albums) albums = albums.concat(d.albums);
-      pageToken = d.nextPageToken || '';
-    } while(pageToken);
+async function driveGet(url) {
+  const r = await fetch(url, { headers: { Authorization: 'Bearer ' + accessToken } });
+  const d = await r.json();
+  if (d.error) throw new Error(d.error.message);
+  return d;
+}
 
-    document.getElementById('albums-loading').style.display = 'none';
-    document.getElementById('albums-content').style.display = 'block';
-    document.getElementById('stat-albums').textContent = albums.length;
-    renderAlbums(albums);
+async function loadFolders() {
+  try {
+    let folders = [], pt = '';
+    do {
+      const url = `https://www.googleapis.com/drive/v3/files?q=mimeType='application/vnd.google-apps.folder' and trashed=false&fields=nextPageToken,files(id,name,thumbnailLink)&pageSize=100${pt ? '&pageToken='+pt : ''}`;
+      const d = await driveGet(url);
+      if (d.files) folders = folders.concat(d.files);
+      pt = d.nextPageToken || '';
+    } while(pt);
+
+    document.getElementById('folders-loading').style.display = 'none';
+    document.getElementById('folders-content').style.display = 'block';
+    document.getElementById('stat-folders').textContent = folders.length;
+    renderFolders(folders);
   } catch(e) {
-    document.getElementById('albums-loading').innerHTML = '<div style="color:#c5221f;font-size:13px;">Không tải được albums: ' + e.message + '</div>';
+    document.getElementById('folders-loading').innerHTML = '<div style="color:#c5221f;font-size:13px;">Lỗi: ' + e.message + '</div>';
   }
 }
 
-function renderAlbums(albums) {
-  const grid = document.getElementById('album-grid');
-  if (!albums.length) { grid.innerHTML = '<div class="empty-state">Chưa có album nào.</div>'; return; }
+function renderFolders(folders) {
+  const grid = document.getElementById('folder-grid');
+  if (!folders.length) { grid.innerHTML = '<div class="empty-state">Chưa có thư mục nào.</div>'; return; }
   grid.innerHTML = '';
-  albums.forEach(a => {
+  folders.forEach(f => {
     const card = document.createElement('div');
-    card.className = 'album-card';
-    card.onclick = () => openAlbum(a.id, a.title);
-    const count = a.mediaItemsCount ? Number(a.mediaItemsCount).toLocaleString('vi') + ' mục' : '';
-    card.innerHTML = `
-      <div class="album-thumb">${a.coverPhotoBaseUrl ? `<img src="${a.coverPhotoBaseUrl}=w300-h300-c" loading="lazy" alt="">` : ''}</div>
-      <div class="album-info">
-        <div class="album-name" title="${a.title}">${a.title}</div>
-        <div class="album-count">${count}</div>
-      </div>`;
+    card.className = 'folder-card';
+    card.onclick = () => openFolder(f.id, f.name);
+    card.innerHTML = `<div class="folder-thumb">${f.thumbnailLink ? `<img src="${f.thumbnailLink}" loading="lazy" alt="">` : '📁'}</div><div class="folder-info"><div class="folder-name" title="${f.name}">${f.name}</div><div class="folder-count">Thư mục Drive</div></div>`;
     grid.appendChild(card);
   });
 }
 
-/* ── Media ── */
-async function openAlbum(albumId, title) {
-  currentAlbumName = title;
-  document.getElementById('album-view').style.display = 'none';
+async function openFolder(folderId, title) {
+  currentFolderName = title;
+  document.getElementById('folder-view').style.display = 'none';
   document.getElementById('media-view').style.display = 'block';
   document.getElementById('media-title').textContent = title;
   document.getElementById('media-count').textContent = '';
@@ -413,28 +277,20 @@ async function openAlbum(albumId, title) {
   document.getElementById('media-stats').style.display = 'none';
 
   try {
-    let items = [], pageToken = '';
+    let items = [], pt = '';
     do {
-      const body = { albumId, pageSize: 100, ...(pageToken && { pageToken }) };
-      const r = await fetch('https://photoslibrary.googleapis.com/v1/mediaItems:search', {
-        method: 'POST',
-        headers: { Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      const d = await r.json();
-      if (d.error) throw new Error(d.error.message);
-      if (d.mediaItems) items = items.concat(d.mediaItems);
-      pageToken = d.nextPageToken || '';
-    } while(pageToken);
+      const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents and trashed=false and (mimeType contains 'image/' or mimeType contains 'video/')&fields=nextPageToken,files(id,name,mimeType,thumbnailLink,webViewLink,createdTime)&pageSize=100${pt ? '&pageToken='+pt : ''}`;
+      const d = await driveGet(url);
+      if (d.files) items = items.concat(d.files);
+      pt = d.nextPageToken || '';
+    } while(pt);
 
     currentMedia = items;
     document.getElementById('media-loading').style.display = 'none';
-
     if (!items.length) { document.getElementById('media-empty').style.display = 'block'; return; }
 
-    const vCount = items.filter(i => i.mediaMetadata && i.mediaMetadata.video).length;
-    const pCount = items.length - vCount;
-    document.getElementById('stat-photos').textContent = pCount.toLocaleString('vi');
+    const vCount = items.filter(i => i.mimeType && i.mimeType.includes('video')).length;
+    document.getElementById('stat-photos').textContent = (items.length - vCount).toLocaleString('vi');
     document.getElementById('stat-videos').textContent = vCount.toLocaleString('vi');
     document.getElementById('media-count').textContent = items.length.toLocaleString('vi') + ' mục';
     document.getElementById('media-stats').style.display = 'flex';
@@ -448,50 +304,34 @@ function renderMedia(items) {
   const grid = document.getElementById('media-grid');
   grid.innerHTML = '';
   items.forEach((item, i) => {
-    const isVideo = item.mediaMetadata && item.mediaMetadata.video;
+    const isVideo = item.mimeType && item.mimeType.includes('video');
     const div = document.createElement('div');
     div.className = 'media-item';
-    div.setAttribute('tabindex', '0');
-    div.setAttribute('role', 'button');
-    div.setAttribute('aria-label', item.filename || (isVideo ? 'video' : 'ảnh'));
-    div.innerHTML = `<img src="${item.baseUrl}=w260-h260-c" alt="" loading="lazy">${isVideo ? '<div class="video-badge">▶ video</div>' : ''}`;
+    div.innerHTML = item.thumbnailLink
+      ? `<img src="${item.thumbnailLink}" alt="" loading="lazy">${isVideo ? '<div class="video-badge">▶ video</div>' : ''}`
+      : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px;">${isVideo ? '🎬' : '🖼️'}</div>`;
     div.onclick = () => openLb(i);
-    div.addEventListener('keydown', e => { if (e.key === 'Enter') openLb(i); });
     grid.appendChild(div);
   });
   grid.style.display = 'grid';
 }
 
-function backToAlbums() {
+function backToFolders() {
   closeLb();
   document.getElementById('media-view').style.display = 'none';
-  document.getElementById('album-view').style.display = 'block';
+  document.getElementById('folder-view').style.display = 'block';
 }
 
-/* ── Lightbox ── */
-function openLb(idx) {
-  currentIdx = idx;
-  buildThumbs();
-  updateLb();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLb() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-  const vid = document.getElementById('lb-media').querySelector('video');
-  if (vid) vid.pause();
-}
+function openLb(idx) { currentIdx = idx; buildThumbs(); updateLb(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeLb() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
 
 function buildThumbs() {
   const tc = document.getElementById('lb-thumbs');
   tc.innerHTML = '';
   currentMedia.forEach((item, i) => {
-    const isVid = item.mediaMetadata && item.mediaMetadata.video;
     const t = document.createElement('div');
-    t.className = 'lb-thumb' + (isVid ? ' vid' : '');
-    t.innerHTML = `<img src="${item.baseUrl}=w88-h88-c" alt="">`;
+    t.className = 'lb-thumb';
+    t.innerHTML = item.thumbnailLink ? `<img src="${item.thumbnailLink}" alt="">` : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">🖼️</div>';
     t.onclick = () => { currentIdx = i; updateLb(); };
     tc.appendChild(t);
   });
@@ -499,64 +339,43 @@ function buildThumbs() {
 
 function updateLb() {
   const item = currentMedia[currentIdx];
-  const isVid = item.mediaMetadata && item.mediaMetadata.video;
+  const isVideo = item.mimeType && item.mimeType.includes('video');
   const n = currentMedia.length;
-
-  document.getElementById('lb-counter').textContent = (currentIdx + 1) + ' / ' + n;
-  document.getElementById('lb-album-name').textContent = currentAlbumName;
-  document.getElementById('lb-title').textContent = item.filename || '';
-  document.getElementById('lb-open-link').href = item.productUrl || '#';
-
-  const date = item.mediaMetadata && item.mediaMetadata.creationTime
-    ? new Date(item.mediaMetadata.creationTime).toLocaleDateString('vi-VN', { year:'numeric', month:'long', day:'numeric' })
-    : '';
-  document.getElementById('lb-date').textContent = date;
+  document.getElementById('lb-counter').textContent = (currentIdx+1) + ' / ' + n;
+  document.getElementById('lb-folder-name').textContent = currentFolderName;
+  document.getElementById('lb-title').textContent = item.name || '';
+  document.getElementById('lb-open-link').href = item.webViewLink || '#';
+  document.getElementById('lb-date').textContent = item.createdTime ? new Date(item.createdTime).toLocaleDateString('vi-VN', {year:'numeric',month:'long',day:'numeric'}) : '';
 
   const wrap = document.getElementById('lb-media');
-  const oldVid = wrap.querySelector('video');
-  if (oldVid) oldVid.pause();
-  wrap.innerHTML = isVid
-    ? `<video src="${item.baseUrl}=dv" controls autoplay playsinline></video>`
-    : `<img src="${item.baseUrl}=w1600-h1200" alt="${item.filename || ''}">`;
+  if (isVideo) {
+    wrap.innerHTML = `<div style="color:white;text-align:center;padding:2rem;"><div style="font-size:48px;margin-bottom:1rem;">🎬</div><div style="margin-bottom:1rem;font-size:15px;">${item.name}</div><a href="${item.webViewLink}" target="_blank" rel="noopener" style="color:#8ab4f8;font-size:14px;">Mở video trong Google Drive ↗</a></div>`;
+  } else {
+    const src = item.thumbnailLink ? item.thumbnailLink.replace(/=s\d+/, '=s1600') : '';
+    wrap.innerHTML = src ? `<img src="${src}" alt="${item.name||''}">` : `<div style="color:white;text-align:center;"><div style="font-size:64px;">🖼️</div><div style="margin-top:1rem;">${item.name}</div></div>`;
+  }
 
-  document.querySelectorAll('.lb-thumb').forEach((t, i) => t.classList.toggle('active', i === currentIdx));
-  const activeThumb = document.querySelectorAll('.lb-thumb')[currentIdx];
-  if (activeThumb) activeThumb.scrollIntoView({ inline: 'center', behavior: 'smooth' });
-
+  document.querySelectorAll('.lb-thumb').forEach((t,i) => t.classList.toggle('active', i===currentIdx));
+  const at = document.querySelectorAll('.lb-thumb')[currentIdx];
+  if (at) at.scrollIntoView({inline:'center',behavior:'smooth'});
   document.getElementById('lb-prev').disabled = currentIdx === 0;
-  document.getElementById('lb-next').disabled = currentIdx === n - 1;
+  document.getElementById('lb-next').disabled = currentIdx === n-1;
 }
 
-function slide(dir) {
-  const next = currentIdx + dir;
-  if (next < 0 || next >= currentMedia.length) return;
-  currentIdx = next; updateLb();
-}
+function slide(dir) { const nx = currentIdx+dir; if (nx<0||nx>=currentMedia.length) return; currentIdx=nx; updateLb(); }
 
-/* Keyboard */
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
-  if (e.key === 'ArrowRight') slide(1);
-  else if (e.key === 'ArrowLeft') slide(-1);
-  else if (e.key === 'Escape') closeLb();
+  if (e.key==='ArrowRight') slide(1); else if (e.key==='ArrowLeft') slide(-1); else if (e.key==='Escape') closeLb();
 });
 
-/* Touch swipe */
-let tx = 0;
-document.getElementById('lb-stage').addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-document.getElementById('lb-stage').addEventListener('touchend', e => {
-  const dx = e.changedTouches[0].clientX - tx;
-  if (Math.abs(dx) > 50) slide(dx < 0 ? 1 : -1);
-});
+let tx=0;
+document.getElementById('lb-stage').addEventListener('touchstart', e => { tx=e.touches[0].clientX; }, {passive:true});
+document.getElementById('lb-stage').addEventListener('touchend', e => { const dx=e.changedTouches[0].clientX-tx; if (Math.abs(dx)>50) slide(dx<0?1:-1); });
 
-/* Khởi tạo GIS sau khi thư viện tải xong */
 function tryInitGIS() {
-  if (window.google && google.accounts && google.accounts.oauth2) {
-    initGIS();
-  } else {
-    // Thư viện chưa xong, thử lại sau 300ms
-    setTimeout(tryInitGIS, 300);
-  }
+  if (window.google && google.accounts && google.accounts.oauth2) initGIS();
+  else setTimeout(tryInitGIS, 300);
 }
 window.addEventListener('load', tryInitGIS);
 </script>
